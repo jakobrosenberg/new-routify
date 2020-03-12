@@ -1,0 +1,10 @@
+
+# A basic redirect rule
+[[redirects]]
+  from = "/*"
+  to = "index.html"
+  status = 200
+
+
+[dev]
+  port = 8081
