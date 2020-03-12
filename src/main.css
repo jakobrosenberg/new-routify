@@ -1,0 +1,25 @@
+/*@import url("https://fonts.googleapis.com/css?family=Audiowide|Lekton|Abhaya+Libre&display=swap");
+@import url("https://rsms.me/inter/inter.css");
+
+
+*/
+
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+/*  Top Bar Logo Transition Height */
+.logoBig {
+    @apply h-40;
+
+    transition: 1s;
+}
+
+.logoSmall {
+    @apply h-20;
+
+    transition: 1s;
+}
