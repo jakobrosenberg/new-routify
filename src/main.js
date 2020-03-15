@@ -1,6 +1,6 @@
 import HMR from '@sveltech/routify/hmr'
 import App from './App.svelte';
-import "./tailwindcss.css";
+import "./main.css";
 
 const app = HMR(App, {
     target: document.body

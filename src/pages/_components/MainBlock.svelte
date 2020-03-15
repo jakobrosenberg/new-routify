@@ -8,6 +8,7 @@
   import { writable } from "svelte/store";
   import Modal from "./Modal.svelte";
   import Form from "./Form.svelte";
+  import ScrollReveal from "scrollreveal";
 
   let progress;
   let progress1;
@@ -58,6 +59,13 @@
       offset: 80
     });
      */
+    var slideUp = {
+      distance: "150%",
+      origin: "left",
+      opacity: 0,
+      reset: true
+    };
+    ScrollReveal().reveal(".flipIn", slideUp);
   });
 </script>
 
