@@ -1,24 +1,13 @@
 <script>
   import MainBlock from "./_components/MainBlock.svelte";
   import Nav from "./_components/Nav.svelte";
-  import Trans from "./_components/Trans.svelte";
+  //import Trans from "./_components/Trans.svelte";
   import { onMount } from "svelte";
-  import { scrollYPosition, innerHeight } from "../stores/stores.js";
+  // import { scrollYPosition, innerHeight } from "../stores/stores.js";
   //import Anime from "./_components/Anime.svelte";
-  import anime from "animejs/lib/anime.es.js";
+  //import anime from "animejs/lib/anime.es.js";
   import basicScroll from "basicscroll";
-
   let y;
-  let innerH;
-
-  $: scrollYPosition.update(n => {
-    return (n = y);
-  });
-
-  $: innerHeight.update(n => {
-    return (n = innerH);
-  });
-  let animation;
   onMount(() => {
     document.querySelectorAll(".scene").forEach(elem => {
       basicScroll
@@ -91,4 +80,4 @@
 </div>
 
 <svelte:head />
-<svelte:window bind:scrollY={y} bind:innerHeight={innerH} />
+<svelte:window bind:scrollY={y} />
