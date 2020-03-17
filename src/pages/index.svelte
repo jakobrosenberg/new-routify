@@ -2,15 +2,16 @@
   import MainBlock from "./_components/MainBlock.svelte";
   import Nav from "./_components/Nav.svelte";
   //import Trans from "./_components/Trans.svelte";
-  import { onMount } from "svelte";
+  import { onMount, tick } from "svelte";
   // import { scrollYPosition, innerHeight } from "../stores/stores.js";
   //import Anime from "./_components/Anime.svelte";
   //import anime from "animejs/lib/anime.es.js";
   import basicScroll from "basicscroll";
   let y;
-  onMount(() => {
-    document.querySelectorAll(".scene").forEach(elem => {
-      basicScroll
+
+  async function myBasicScroll(elem){
+    await tick();
+        basicScroll
         .create({
           elem: elem,
           from: "top-bottom",
@@ -41,8 +42,7 @@
           }
         })
         .start();
-    });
-  });
+  }
 </script>
 
 <style>
@@ -68,11 +68,10 @@
 <MainBlock />
 <div class="h-full">
   <div class="h-screen bg-red-800">
-    <h1 class="scene text-white text-center">Hello</h1>
-    <h1 class="scene text-white text-center">Hello</h1>
-    <h1 class="scene text-white text-center">Hello</h1>
-    <h1 class="scene text-white text-center">Hello</h1>
-
+    <h1 use:myBasicScroll class="scene text-white text-center">Hello</h1>
+    <h1 use:myBasicScroll class="scene text-white text-center">Hello</h1>
+    <h1 use:myBasicScroll class="scene text-white text-center">Hello</h1>
+    <h1 use:myBasicScroll class="scene text-white text-center">Hello</h1>
   </div>
 
   <div class="h-screen bg-green-900" />
